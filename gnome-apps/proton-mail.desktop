@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Proton Mail
+GenericName=ProtonMail
+Comment=Proton mail app
+Exec=/opt/google/chrome/google-chrome --app=https://mail.protonmail.com/
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/protonmail.png
+Categories=Application;
+Keywords=proton;mail;webapp;
+X-Ubuntu-Gettext-Domain=ProtonMail
+StartupWMClass=mail.protonmail.com

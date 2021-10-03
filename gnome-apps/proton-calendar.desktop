@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Proton Calendar
+GenericName=ProtonCalendar
+Comment=Proton calendar app
+Exec=/opt/google/chrome/google-chrome --app=https://calendar.protonmail.com/
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/protoncalendar.jpg
+Categories=Application;
+Keywords=proton;calendar;webapp;
+X-Ubuntu-Gettext-Domain=ProtonCalendar
+StartupWMClass=calendar.protonmail.com

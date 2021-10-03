@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Messenger
+GenericName=Messenger
+Comment=Messenger desktop webapp
+Exec=/opt/google/chrome/google-chrome --app=https://messenger.com/
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/messenger.svg
+Categories=Application;
+Keywords=Messenger;webapp;
+X-Ubuntu-Gettext-Domain=Messenger
+StartupWMClass=messenger.com
