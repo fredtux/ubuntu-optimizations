@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Outlook
+GenericName=Outlook
+Comment=Outlook webapp
+Exec=/opt/google/chrome/google-chrome --app=https://outlook.office365.com/mail/inbox
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+# If you want icon, type path of icon
+Icon=/usr/share/applications/outlook.svg
+Categories=Application;
+Keywords=Outlook;webapp;
+X-Ubuntu-Gettext-Domain=Outlook
+StartupWMClass=outlook.office365.com
