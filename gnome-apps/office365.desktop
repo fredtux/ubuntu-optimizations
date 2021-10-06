@@ -1,0 +1,16 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Office365
+GenericName=Office365
+Comment=Office desktop webapp
+Exec=/opt/google/chrome/google-chrome --app=https://www.office.com
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+# If you want icon, type path of icon
+Icon=/usr/share/applications/office365.png
+Categories=Application;
+Keywords=Office365;webapp;
+X-Ubuntu-Gettext-Domain=Office365
+StartupWMClass=www.office.com
