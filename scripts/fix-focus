@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#### Fix focus on C920 ####
+v4l2-ctl -d /dev/video$1 --set-ctrl=focus_auto=0
+v4l2-ctl -d /dev/video$1 --set-ctrl=focus_auto=1
