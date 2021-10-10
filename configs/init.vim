@@ -1,3 +1,35 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-source ~/.vimrc
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'lfv89/vim-interestingwords'
+Plug 'kassio/neoterm'
+Plug 'shaunsingh/nord.nvim'
+
+call plug#end()
+
+colorscheme nord
+
+set number
+vmap <C-c> "+y
+nmap <F6> :NERDTreeToggle<CR>
+set splitbelow
+
+" Neoterm specific stuff
+" Exit terminal mode (to normal mode) with esc
+tnoremap <Esc> <C-\><C-n>
+
+" Start neoterm in insert mode
+let g:neoterm_autoinsert=1
+
+" Toggle neoterm buffer at the bottom of the window
+noremap :bo Ttoggle
+
+" open terminal in bottom split
+let g:neoterm_default_mod='belowright'
+"
+" terminal split size
+let g:neoterm_size=16
+
+" scroll to the bottom when running a command
+let g:neoterm_autoscroll=1
+nmap <C-n> :Topen<cr>
