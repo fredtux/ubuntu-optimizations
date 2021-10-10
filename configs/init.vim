@@ -21,9 +21,6 @@ tnoremap <Esc> <C-\><C-n>
 " Start neoterm in insert mode
 let g:neoterm_autoinsert=1
 
-" Toggle neoterm buffer at the bottom of the window
-noremap :bo Ttoggle
-
 " open terminal in bottom split
 let g:neoterm_default_mod='belowright'
 "
