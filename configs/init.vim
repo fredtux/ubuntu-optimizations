@@ -23,7 +23,7 @@ let g:neoterm_autoinsert=1
 
 " open terminal in bottom split
 let g:neoterm_default_mod='belowright'
-"
+
 " terminal split size
 let g:neoterm_size=16
 
