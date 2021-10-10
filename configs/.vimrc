@@ -8,3 +8,8 @@ call plug#end()
 set number
 vmap <C-c> "+y
 nmap <F6> :NERDTreeToggle<CR>
+" copies filepath to clipboard by pressing yf
+:nnoremap <silent> yf :let @+=expand('%:p')<CR>
+" copies pwd to clipboard: command yd
+:nnoremap <silent> yd :let @+=expand('%:p:h')<CR>
+set splitbelow
