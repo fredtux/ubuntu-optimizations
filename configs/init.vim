@@ -7,15 +7,14 @@ Plug 'shaunsingh/nord.nvim'
 Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 
 call plug#end()
 
 colorscheme nord
-
-set number
-vmap <C-c> "+y
-nmap <F6> :NERDTreeToggle<CR>
-set splitbelow
 
 let g:airline_powerline_fonts = 1
 
@@ -34,4 +33,62 @@ let g:neoterm_size=16
 
 " scroll to the bottom when running a command
 let g:neoterm_autoscroll=1
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Dap debug adapter
+lua << EOF
+local dap = require('dap')
+dap.adapters.python = {
+    type = 'executable';
+    command = '/usr/bin/python3';
+    args = { '-m', 'debugpy.adapter' };
+}
+EOF
+
+lua << EOF
+local dap = require('dap')
+dap.configurations.python = {
+  {
+    type = 'python';
+    request = 'launch';
+    name = "Launch file";
+    program = "${file}";
+    pythonPath = function()
+      return '/usr/bin/python3'
+    end;
+  },
+}
+EOF
+
+lua << EOF
+require('dap')
+vim.fn.sign_define('DapBreakpoint', {text='🛑', texthl='', linehl='', numhl=''})
+EOF
+
+" Dap shortcuts
+nnoremap <silent> <F5> :lua require'dap'.continue()<CR>
+nnoremap <silent> <F10> :lua require'dap'.step_over()<CR>
+nnoremap <silent> <F11> :lua require'dap'.step_into()<CR>
+nnoremap <silent> <F12> :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
+
+" Dap UI
+lua << EOF
+require("dapui").setup()
+EOF
+nmap <C-i> :lua require("dapui").toggle()<CR>
+" Misc
 nmap <C-n> :Topen<cr>
+set number
+vmap <C-c> "+y
+nmap <F6> :NERDTreeToggle<CR>
+set splitbelow
