@@ -4,14 +4,14 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'lfv89/vim-interestingwords'
 Plug 'kassio/neoterm'
 Plug 'shaunsingh/nord.nvim'
-Plug 'donRaphaco/neotex', { 'for': 'tex' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
-
+Plug 'lervag/vimtex', {'for': 'tex'}
+		
 call plug#end()
 
 colorscheme nord
@@ -81,11 +81,14 @@ nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.i
 nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
 
-" Dap UI
-lua << EOF
-require("dapui").setup()
-EOF
-nmap <C-i> :lua require("dapui").toggle()<CR>
+" Dap UI settings
+nmap <silent> <leader>i :lua require("dapui").setup()<CR>
+nmap <silent> <C-i> :lua require("dapui").toggle()<CR>
+
+" Vimtex settings
+let g:tex_flavor = 'latex'
+nmap <silent> <leader>t :VimtexCompile<CR>
+
 " Misc
 nmap <C-n> :Topen<cr>
 set number
