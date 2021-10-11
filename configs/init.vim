@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'lfv89/vim-interestingwords'
 Plug 'kassio/neoterm'
-Plug 'shaunsingh/nord.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lua/plenary.nvim'
@@ -11,11 +10,28 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'lervag/vimtex', {'for': 'tex'}
-		
+Plug 'sbdchd/neoformat'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'sainnhe/sonokai'
+
 call plug#end()
 
-colorscheme nord
+" Remap leader
+let mapleader = ' '
 
+" Color scheme
+" Important!!
+if has('termguicolors')
+    set termguicolors
+endif
+" The configuration options should be placed before `colorscheme sonokai`.
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
+colorscheme sonokai
+
+" Airline
 let g:airline_powerline_fonts = 1
 
 " Neoterm specific stuff
@@ -88,6 +104,9 @@ nmap <silent> <C-i> :lua require("dapui").toggle()<CR>
 " Vimtex settings
 let g:tex_flavor = 'latex'
 nmap <silent> <leader>t :VimtexCompile<CR>
+
+" Neoformat
+nmap <leader>l :Neoformat<CR>
 
 " Misc
 nmap <C-n> :Topen<cr>
