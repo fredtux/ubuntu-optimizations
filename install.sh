@@ -11,7 +11,7 @@ echo -e "${RED}UPDATE${NC}"
 sudo apt-get update -y
 
 echo -e "${RED}INSTALL REQUIRED PROGRAMS${NC}"
-sudo apt-get install wget curl git -y
+sudo apt-get install wget curl git flatpak -y
 sudo snap install node --classic
 
 
@@ -70,6 +70,7 @@ fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 mkdir -p ~/.config/nvim
 cp configs/init.vim ~/.config/nvim/init.vim
+
 nvim +PlugInstall +qall
 
 if ! command -v kitty &>/dev/null
@@ -126,5 +127,18 @@ sudo chown root:root /usr/share/applications/outlook.desktop
 sudo chmod 644 /usr/share/applications/outlook.desktop
 sudo chown root:root /usr/share/applications/outlook.svg
 sudo chmod 644 /usr/share/applications/outlook.svg
+
+echo -e "${RED}FONTS${NC}"
+mkdir -p ~/.local/share/fonts 
+
+rm -fr Hack
+git clone https://github.com/source-foundry/Hack.git
+cp -r Hack/build/ttf/* ~/.local/share/fonts/
+
+rm -fr fonts
+git clone https://github.com/powerline/fonts.git
+cp -r fonts/FiraMono/*.otf ~/.local/share/fonts/
+
+fc-cache -f -v
 
 echo -e "${RED}DONE !!!${NC}"
