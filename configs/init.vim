@@ -13,6 +13,7 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'sbdchd/neoformat'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'sainnhe/sonokai'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -112,5 +113,5 @@ nmap <leader>l :Neoformat<CR>
 nmap <C-n> :Topen<cr>
 set number
 vmap <C-c> "+y
-nmap <F6> :NERDTreeToggle<CR>
+nmap <silent> <F6> :NERDTreeToggle<CR>
 set splitbelow
