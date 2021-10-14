@@ -69,9 +69,13 @@ then
 fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 mkdir -p ~/.config/nvim
-cp configs/init.vim ~/.config/nvim/init.vim
 
+# Stage 1 - only plugins
+cp configs/init_onlyplugins.vim ~/.config/nvim/init.vim
 nvim +PlugInstall +qall
+
+# Stage 2 - full config
+cp configs/init.vim ~/.config/nvim/init.vim
 
 if ! command -v kitty &>/dev/null
 then
