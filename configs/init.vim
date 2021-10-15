@@ -21,6 +21,10 @@ call plug#end()
 " Remap leader
 let mapleader = ' '
 
+" Resize quicker
+nnoremap <silent> <C-w>0 :exe "resize " . (winheight(0) * 5/4)<CR>
+nnoremap <silent> <C-w>9 :exe "resize " . (winheight(0) * 4/5)<CR>
+
 " Color scheme
 " Important!!
 if has('termguicolors')
