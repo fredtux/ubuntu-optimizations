@@ -43,6 +43,9 @@ sudo chmod 755 /usr/bin/search
 sudo chown root:root /usr/bin/update
 sudo chmod 755 /usr/bin/update
 
+sudo chown root:root /usr/bin/text-search
+sudo chmod 755 /usr/bin/text-search
+
 # Configs
 echo -e "${RED}CONFIGS${NC}"
 
