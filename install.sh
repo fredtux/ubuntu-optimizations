@@ -80,9 +80,6 @@ nvim +PlugInstall +qall
 # Stage 2 - full config
 cp configs/init.vim ~/.config/nvim/init.vim
 
-# Add neovim-qt from my own build (latest)
-sudo dpkg -i deb/neovim-qt-github_0.2.16.1-1_amd64.deb
-
 if ! command -v kitty &>/dev/null
 then
 	sudo apt-get install kitty -y
