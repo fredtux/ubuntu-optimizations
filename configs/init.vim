@@ -171,3 +171,4 @@ vmap <C-c> "+y
 nmap <silent> <F6> :NERDTreeToggle<CR>
 set splitbelow
 set cursorline
+set showcmd
