@@ -15,6 +15,8 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'fredtux/sonokai'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -44,14 +46,14 @@ let g:airline_powerline_fonts = 1
 " Exit terminal mode (to normal mode) with esc
 tnoremap <Esc> <C-\><C-n>
 
-" Start neoterm in insert mode
+" Start neoterm in insert mode (1) or not (0)
 let g:neoterm_autoinsert=1
 
 " open terminal in bottom split
 let g:neoterm_default_mod='belowright'
 
 " terminal split size
-let g:neoterm_size=16
+let g:neoterm_size=20
 
 " scroll to the bottom when running a command
 let g:neoterm_autoscroll=1
@@ -164,11 +166,19 @@ for _, lsp in ipairs(servers) do
 end
 EOF
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
 " Misc
-nmap <C-n> :Topen<cr>
+nmap <C-n> :Tnew<cr>
+nmap <C-s> :vertical Tnew<cr>
 set number
 vmap <C-c> "+y
 nmap <silent> <F6> :NERDTreeToggle<CR>
 set splitbelow
 set cursorline
 set showcmd
+set splitright
