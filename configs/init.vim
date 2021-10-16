@@ -12,7 +12,7 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'sbdchd/neoformat'
 Plug 'bfrg/vim-cpp-modern'
-Plug 'sainnhe/sonokai'
+Plug 'fredtux/sonokai'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
