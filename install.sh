@@ -80,6 +80,7 @@ nvim +PlugInstall +qall
 
 # Stage 2 - full config
 cp configs/init.vim ~/.config/nvim/init.vim
+nvim +PlugInstall +qall
 
 if ! command -v kitty &>/dev/null
 then
