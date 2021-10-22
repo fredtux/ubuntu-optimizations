@@ -174,7 +174,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Misc
 nmap <C-n> :Tnew<cr>
-nmap <C-s> :vertical Tnew<cr>
+nmap <C-s> :vertical Tnew <cr><Esc>60<C-w>><cr><Esc>i
 set number
 vmap <C-c> "+y
 nmap <silent> <F6> :NERDTreeToggle<CR>
