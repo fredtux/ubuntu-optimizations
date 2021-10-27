@@ -62,6 +62,7 @@ if ! command -v zsh &>/dev/null
 then
 	sudo apt-get install zsh -y
 fi
+sudo apt-get install zsh-autosuggestions -y
 cp configs/.zshrc ~/.zshrc
 chsh -s $(which zsh)
 sudo cp configs/.zshrc /root/.zshrc
