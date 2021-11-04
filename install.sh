@@ -47,6 +47,9 @@ sudo chmod 755 /usr/bin/update
 sudo chown root:root /usr/bin/text-search
 sudo chmod 755 /usr/bin/text-search
 
+sudo chown root:root /usr/bin/go-install-tar
+sudo chmod 755 /usr/bin/go-install-tar
+
 # Configs
 echo -e "${RED}CONFIGS${NC}"
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf go1.17.3.linux-amd64.tar.gz
