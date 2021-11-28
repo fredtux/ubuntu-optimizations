@@ -17,6 +17,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'karb94/neoscroll.nvim'
 
 call plug#end()
 
@@ -26,6 +27,9 @@ let mapleader = ' '
 " Resize quicker
 nnoremap <silent> <C-w>0 :exe "resize " . (winheight(0) * 5/4)<CR>
 nnoremap <silent> <C-w>9 :exe "resize " . (winheight(0) * 4/5)<CR>
+
+" Neoscroll
+lua require('neoscroll').setup()
 
 " Color scheme
 " Important!!
@@ -111,6 +115,7 @@ nmap <silent> <C-i> :lua require("dapui").toggle()<CR>
 
 " Vimtex settings
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
 nmap <silent> <leader>t :VimtexCompile<CR>
 
 " Neoformat
@@ -175,7 +180,9 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " Misc
 nmap <C-n> :Tnew<cr>
 nmap <C-s> :vertical Tnew <cr><Esc>60<C-w>><cr><Esc>i
-set number
+inoremap { {<CR>}<Esc>ko
+set number relativenumber
+:set nu rnu
 vmap <C-c> "+y
 nmap <silent> <F6> :NERDTreeToggle<CR>
 set splitbelow

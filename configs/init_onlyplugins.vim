@@ -15,5 +15,8 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'fredtux/sonokai'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'karb94/neoscroll.nvim'
 
 call plug#end()
