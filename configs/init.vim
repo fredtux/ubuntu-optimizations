@@ -18,6 +18,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'karb94/neoscroll.nvim'
+Plug 'rust-lang/rust.vim'
+
 
 call plug#end()
 
@@ -176,6 +178,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
+" Rust filetype config
+syntax enable
+filetype plugin indent on
 
 " Misc
 nmap <C-n> :Tnew<cr>
