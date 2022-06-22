@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Neovide
+GenericName=Neovide
+Comment=Neovide desktop webapp
+Exec=/usr/bin/neovide
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/neovide.png
+Categories=Application;
+Keywords=Neovide;neovide;
+X-Ubuntu-Gettext-Domain=Neovide
