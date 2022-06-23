@@ -19,6 +19,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'karb94/neoscroll.nvim'
 Plug 'rust-lang/rust.vim'
+Plug 'github/copilot.vim'
 
 
 call plug#end()
@@ -182,6 +183,9 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " Rust filetype config
 syntax enable
 filetype plugin indent on
+
+" Copilot disable
+au Vimenter * :Copilot disable
 
 " Misc
 nmap <C-n> :Tnew<cr>
