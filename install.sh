@@ -14,7 +14,7 @@ echo -e "${RED}INSTALL REQUIRED PROGRAMS${NC}"
 sudo apt-get install wget curl git flatpak python3-pip -y
 sudo snap install node --classic
 
-pip install --user --upgrade pynvim
+pip install pynvim
 
 if ! command -v google-chrome &>/dev/null
 then
