@@ -155,4 +155,9 @@ cp -r fonts/FiraMono/*.otf ~/.local/share/fonts/
 
 fc-cache -f -v
 
+# PEDA
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
+echo "DONE! debug your program with gdb and enjoy"
+
 echo -e "${RED}DONE !!!${NC}"
