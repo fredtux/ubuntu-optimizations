@@ -1,0 +1,7 @@
+#!/bin/bash
+sFolder=$(realpath $1)
+sFolder2=$(basename $sFolder)
+
+sudo cp -r $sFolder /var/www/html/owncloud/data/$USER/files/
+sudo chown www-data: /var/www/html/owncloud/data/$USER/files/$sFolder2
+sudo -u www-data php /var/www/html/owncloud/occ files:scan $USER 

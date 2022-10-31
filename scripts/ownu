@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo -u www-data php /var/www/html/owncloud/occ files:scan $USER 
