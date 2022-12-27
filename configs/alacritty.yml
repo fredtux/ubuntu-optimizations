@@ -1,0 +1,57 @@
+import:
+  - ~/.alacritty-colorscheme/themes/{scheme_name}.yaml
+
+window:
+  dynamic_title: true
+  dimensions:
+    columns: 0
+    lines: 0
+
+  opacity: 1.0
+
+  position:
+    x: 0
+    y: 0
+
+  #startup_mode: SimpleFullscreen
+  #position:
+    #x: 0
+    #y: 0
+
+  padding:
+    x: 25
+    y: 15 
+
+  dynamic_padding: false
+  decorations: none
+
+scrolling:
+  history: 50000
+  multiplier: 3
+
+font:
+  normal:
+    family: SauceCodePro NF
+    style: Regular
+
+  bold:
+    family: SauceCodePro NF
+    style: Bold
+
+  italic:
+    family: SauceCodePro NF
+    style: Bold Italic
+
+  size: 13.0
+
+  offset:
+    x: 0
+    y: 5
+
+  glyph_offset:
+    x: 0
+    y: 0
+
+  use_thin_strokes: true
+
+draw_bold_text_with_bright_colors: true
