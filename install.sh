@@ -50,6 +50,9 @@ sudo chmod 755 /usr/bin/text-search
 sudo chown root:root /usr/bin/go-install-tar
 sudo chmod 755 /usr/bin/go-install-tar
 
+sudo chown root:root /usr/bin/i3l
+sudo chmod 755 /usr/bin/i3l
+
 # Configs
 echo -e "${RED}CONFIGS${NC}"
 
