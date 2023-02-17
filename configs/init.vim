@@ -19,7 +19,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'karb94/neoscroll.nvim'
 Plug 'rust-lang/rust.vim'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
@@ -204,7 +204,7 @@ syntax enable
 filetype plugin indent on
 
 " Copilot disable
-au VimEnter * :Copilot disable
+" au VimEnter * :Copilot disable
 
 " LSP Installer
 lua <<EOF
@@ -281,7 +281,7 @@ local opts = {
 		-- whether to show hover actions inside the hover window
 		-- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
 		-- default: true
-		hover_with_actions = true,
+		-- hover_with_actions = true,
 
 		-- how to execute terminal commands
 		-- options right now: termopen / quickfix

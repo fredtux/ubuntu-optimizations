@@ -20,6 +20,7 @@ if ! command -v google-chrome &>/dev/null
 then
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
+	rm -f google-chrome-stable_current_amd64.deb
 fi
 
 # Scripts
@@ -90,6 +91,15 @@ nvim +PlugInstall +qall
 cp configs/init.vim ~/.config/nvim/init.vim
 nvim +PlugInstall +qall
 
+# ROOT - Stage 1 - only plugins
+sudo mkdir -p /root/.config/nvim
+sudo cp configs/init_onlyplugins.vim /root/.config/nvim/init.vim
+sudo nvim +PlugInstall +qall
+
+# ROOT - Stage 2 - full config
+sudo cp configs/init.vim /root/.config/nvim/init.vim
+sudo nvim +PlugInstall +qall
+
 if ! command -v kitty &>/dev/null
 then
 	sudo apt-get install kitty -y
@@ -151,16 +161,56 @@ mkdir -p ~/.local/share/fonts
 rm -fr Hack
 git clone https://github.com/source-foundry/Hack.git
 cp -r Hack/build/ttf/* ~/.local/share/fonts/
+rm -fr Hack
 
 rm -fr fonts
 git clone https://github.com/powerline/fonts.git
 cp -r fonts/FiraMono/*.otf ~/.local/share/fonts/
+rm -fr fonts
 
 fc-cache -f -v
 
 # PEDA
+rm -fr peda
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
-echo "DONE! debug your program with gdb and enjoy"
+rm -fr peda
+
+# i3wm
+echo -e "${RED}i3wm${NC}"
+rm -f keyring.deb
+/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
+sudo apt install ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+sudo apt-get update
+sudo apt-get -y install i3 polybar feh numlockx picom rofi
+rm -f keyring.deb
+
+mkdir -p ~/.config/i3/
+cp configs/i3config ~/.config/i3/config
+
+# Polybar
+cp -r configs/polybar ~/.config
+
+# Picom
+mkdir -p ~/.config/picom
+cp -r configs/picom.conf ~/.config/picom/picom.conf
+
+# Rofi
+rm -fr rofi
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+chmod +x rofi/setup.sh
+cd rofi
+./setup.sh
+cd ..
+rm -fr rofi
+cp -r configs/rofi ~/.config
+
+# Alacritty
+echo -e "${RED}Alacritty${NC}"
+sudo add-apt-repository -y ppa:aslatter/ppa
+sudo apt-get -y install alacritty
+mkdir -p ~/.config/alacritty
+cp -r configs/alacritty ~/.config/
 
 echo -e "${RED}DONE !!!${NC}"
