@@ -54,6 +54,9 @@ sudo chmod 755 /usr/bin/go-install-tar
 sudo chown root:root /usr/bin/i3l
 sudo chmod 755 /usr/bin/i3l
 
+sudo chown root:root /usr/bin/monsetup
+sudo chmod 755 /usr/bin/monsetup
+
 # Configs
 echo -e "${RED}CONFIGS${NC}"
 

@@ -1,0 +1,24 @@
+#!/bin/bash
+xrandr --auto --output HDMI-1 --mode 1920x1080 --right-of eDP-1
+
+OPTION=$1
+
+if [ ! -n "$OPTION" ]
+then
+
+	killall -q polybar
+
+	if type "xrandr"; then
+			for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+			MONITOR=$m polybar --reload main -c "~/.config/polybar/shapes/config.ini" 2> /dev/null &
+			done
+		else
+  			polybar --reload main -c "~/.config/polybar/shapes/config.ini" 2> /dev/null &
+		fi
+elif  [ $OPTION -eq 1 ]
+then
+	killall -q polybar
+  	polybar --reload main -c "~/.config/polybar/shapes/config.ini" 2> /dev/null &
+else
+	echo "Invalid parameter. Allowed parameters: (no parameters) or 1"
+fi
