@@ -1,4 +1,5 @@
 # Ubuntu optimizations
+**Yes, I should have called it dotfiles. Basically there are a few more scripts besides dotfiles but still...**
 
 Added a few tweaks and scripts to optimize the Ubuntu experience
 
