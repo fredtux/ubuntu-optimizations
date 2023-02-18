@@ -11,7 +11,7 @@ echo -e "${RED}UPDATE${NC}"
 sudo apt-get update -y
 
 echo -e "${RED}INSTALL REQUIRED PROGRAMS${NC}"
-sudo apt-get install wget curl git flatpak python3-pip gnome-screenshot -y
+sudo apt-get install wget curl git flatpak python3-pip -y
 sudo snap install node --classic
 
 pip install pynvim
