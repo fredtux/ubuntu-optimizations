@@ -284,7 +284,7 @@ bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 exec --no-startup-id "xinput set-prop 13 317 1"
 
 # Add wallpaper
-exec --no-startup-id "feh --bg-fill ~/Pictures/Wallpapers/hipster.jpg"
+# exec --no-startup-id "feh --bg-fill ~/Pictures/Wallpapers/hipster.jpg"
 
 # Start picom
 exec --no-startup-id "picom --config ~/.config/picom/picom.conf"
