@@ -153,6 +153,12 @@ sudo chmod 644 /usr/share/applications/whatsapp-webapp.desktop
 sudo chown root:root /usr/share/applications/whatsapp.png
 sudo chmod 644 /usr/share/applications/whatsapp.png
 
+
+sudo chown root:root /usr/share/applications/chatgpt-webapp.desktop
+sudo chmod 644 /usr/share/applications/chatgpt-webapp.desktop
+sudo chown root:root /usr/share/applications/chatgpt.png
+sudo chmod 644 /usr/share/applications/chatgpt.png
+
 sudo chown root:root /usr/share/applications/outlook.desktop
 sudo chmod 644 /usr/share/applications/outlook.desktop
 sudo chown root:root /usr/share/applications/outlook.svg

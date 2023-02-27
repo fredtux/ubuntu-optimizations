@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=ChatGPT
+GenericName=ChatGPT
+Comment=ChatGPT desktop webapp
+Exec=/opt/google/chrome/google-chrome --app=https://chat.openai.com/chat
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/chatgpt.png
+Categories=Application;
+Keywords=ChatGPT;gpt;webapp;
+X-Ubuntu-Gettext-Domain=ChatGPT
+StartupWMClass=chat.openai.com
