@@ -91,6 +91,8 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
+set $ws10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -101,6 +103,8 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -303,3 +307,6 @@ exec --no-startup-id xset s noblank
 # Print Screen
 bindsym --release $mod+Shift+P exec gnome-screenshot -i
 
+# Alacritty scratchpad with tmux
+exec --no-startup-id "alacritty --class=scratchalacritty -e tmux"
+for_window [instance="scratchalacritty"] move scratchpad
