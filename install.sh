@@ -169,6 +169,11 @@ sudo chmod 644 /usr/share/applications/outlook.desktop
 sudo chown root:root /usr/share/applications/outlook.svg
 sudo chmod 644 /usr/share/applications/outlook.svg
 
+sudo chown root:root /usr/share/applications/android-studio.desktop
+sudo chmod 644 /usr/share/applications/android-studio.desktop
+sudo chown root:root /usr/share/applications/android-studio.svg
+sudo chmod 644 /usr/share/applications/android-studio.svg
+
 echo -e "${RED}FONTS${NC}"
 mkdir -p ~/.local/share/fonts 
 

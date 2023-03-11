@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Android Studio
+GenericName=Android Studio
+Comment=Android Studio
+Exec=/usr/local/android-studio/bin/studio.sh
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/android-studio.svg
+Categories=Application;
+Keywords=AndroidStudio;android;studio;
+X-Ubuntu-Gettext-Domain=AndroidStudio
+StartupWMClass=android.studio
