@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Anaconda Navigator
+GenericName=Anaconda Navigator
+Comment=Anaconda Navigator
+Exec=/home/tux/anaconda3/bin/anaconda-navigator
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/anaconda-navigator.png
+Categories=Application;
+Keywords=Anaconda;anaconda;
+X-Ubuntu-Gettext-Domain=AnacondaNavigator

@@ -129,6 +129,8 @@ fi
 mkdir -p ~/.config/zathura
 cp configs/zathurarc ~/.config/zathura/zathurarc
 
+flatpak install md.obsidian.Obsidian -y
+
 # Gnome Apps
 echo -e "${RED}GNOME APPS${NC}"
 sudo cp -r gnome-apps/* /usr/share/applications/
@@ -173,6 +175,16 @@ sudo chown root:root /usr/share/applications/android-studio.desktop
 sudo chmod 644 /usr/share/applications/android-studio.desktop
 sudo chown root:root /usr/share/applications/android-studio.svg
 sudo chmod 644 /usr/share/applications/android-studio.svg
+
+sudo chown root:root /usr/share/applications/anaconda-navigator.desktop
+sudo chmod 644 /usr/share/applications/anaconda-navigator.desktop
+sudo chown root:root /usr/share/applications/anaconda-navigator.png
+sudo chmod 644 /usr/share/applications/anaconda-navigator.png
+
+sudo chown root:root /usr/share/applications/keepassxc.desktop
+sudo chmod 644 /usr/share/applications/keepassxc.desktop
+sudo chown root:root /usr/share/applications/keepassxc.svg
+sudo chmod 644 /usr/share/applications/keepassxc.svg
 
 echo -e "${RED}FONTS${NC}"
 mkdir -p ~/.local/share/fonts 

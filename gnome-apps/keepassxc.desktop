@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=KeepassXC
+GenericName=KeepassXC
+Comment=KeepassXC
+Exec=/snap/bin/keepassxc
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=/usr/share/applications/keypassxc.svg
+Categories=Application;
+Keywords=Keepassxc;keepassxc;
+X-Ubuntu-Gettext-Domain=KeepassXC
